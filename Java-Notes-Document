@@ -1,0 +1,279 @@
+there is no concept of pointers in java
+no symbolic constents
+no union
+no direct input/output statements
+no operator overloading
+all numeric variables are signed
+memory is stored in a heap
+
+how to run on cmd prompt::
+	program name --- xyz.java
+	to compile --- javac xyz.java
+	to run --- java xyz
+public
+private
+protected --- in own class or in subclass
+
+data types in java:
+	primitive datatypes --- boolean
+	numeric -- character -- 2 bytes(stores uni code-universal code)
+		   integral:
+			float
+			double
+			short
+			int
+			byte -- 8 bits
+	non primitives --- class,array etc
+
+wrapper class ::provide a way to convert primitive datatypes into object and object into primitive datatypes
+int --Integer
+long -- Long
+double -- Double
+char ---Character
+boolean -- Boolean
+byte -- Byte
+Integer.toBinaryString(number)
+
+
+autoboxing--in convert primitive datatypes into object automatically
+int a=20;
+1st way(automatically assigning)-- Integer b=a;
+2nd way(maually assigning)-- Interger c=Integer.valueof(a);
+
+unboxing --converts object into primitive datatypes
+Interger a=new Interger(20);
+1st way(auto) -- int i=a;
+2nd way(manually) -- int b= a.intValue()
+
+typecasting::
+1.smaller to larger
+	int i=10;
+	double d;
+	d=i;
+2.larger to smaller	
+	double d=10;
+	int i;
+	i=(int) d;
+widening and narrowing topics on internet
+
+variables in java:
+	local variables:that are declared inside a function or a method
+	instance variable:that are declared inside a class
+		(instance method can use instance variable without creating the object of a 			class,whereas if the instance is to be used inside a static method one has 			to create the object of a class)
+	shared/static variable:declared at class level
+
+there are 2 methods to create object of a class:
+	unnamed object
+	named object
+
+java provides 3 types of static :
+	static variable
+	static method
+	static block 
+class can contain multiple static block and each static block can contain all the instructions which can be stored in a function,like creation of variable,loops etc
+	static variable>static block>static method
+
+what is the use of static block??
+
+static block can not be nested
+BufferedReader sc=new BufferedReader(new InputStreamReader(System.in))
+input of a string
+	name=sc.readLine();
+integers	rollno=Integer.parseInt(sc.readLine())
+Double		marks=Double.parseDouble(sc.readLine())
+forsinglechar	grade=(char)sc.read()
+
+this keyword -- when class level variables and parameter variables will have the same name,them inside the function jvm will use the parameter variables and not the class level varaibles
+this cannot be used with the static context(method or block)
+When Class Level Variables and parameter variables have the same name.
+ then inside the function JVM will use the parameter varibles
+
+ This >> Cannot be used with the static context.
+ 
+ >> 16th January.
+ 	If two function will have identical signature. we cannot do function overloading
+ 	a function signature consist of a 
+ 		1.Function Name
+ 		2.Parameter Type
+ 		3.Parameter Number
+ 		4.Sequence of Parameter
+ 	in case of a function overloading, if the argument type and the parameter type is mismatching but
+ 	parameter data type have wider range, then compiler will automatically prefer type casting but not
+ 	visa-versa
+ 	if the data passed using arguments matches the higher data type arguments or can be type casted to higher data type argument
+ 	then the overloaded function which will have the higher data type will be called and lower one will be ignored.
+ 	
+ 	Constructors -------------------
+ 	Constructor cannot be a static.
+ 	
+ 	17th January ?>
+ 	Function overriding :: it is performed when baseClass and subClass both have a identical function signature.
+ 	||>> at the time of overriding there are two ways to call baseClass overRidden function.
+ 		1.Super.baseCassFunction()
+ 		2.Super cannot be used in a static context.
+ 		3.BaseClass Object can store baseClass instance  or subClass instance.
+ 	While performing function overriding the following rules should be kept in mind.
+ 		1.Instance function can be overRidden by a instance function.
+ 		2.In case of a overRidden and a overRiding Method are static, then respective of the instance the preference will be given
+ 		 to base class method.
+ 	Final can be used for the following function.
+ 		1.to prevent inheritance.
+ 		2.use in function overRiding.
+ 		3.final methods cannot be overRidden.
+ 		4.final make a variables as a constant.	
+ 	
+ 	22January.
+ 	Array Declaration is only for a compiler . at this time the size of array, and default value and memory for array is not allocated. size is always
+ 	allocated at runtime by JVM.
+ 		.. .. int arr[]; arr = new int [5]
+ 	Default Values. 
+ 		float & double = 0.0
+ 		String  = Null
+ 		.. .. int arr[] = new int [5]	
+ 	
+ 	Those Array Where Each Particular Row, there are varying number of columns
+ 	
+ 	23rd January;
+ 	Array which is replacing current array, can contain more value or less value as compared to correct array.
+ 	
+ 	
+ 	24th January .:: 
+ 	Constructor under Inheritance.>>
+ 	When the base class & subclass both have constructor, which are parameterized as well as default/parameter-less.
+ 	Irrespective of subclass constructor, which is going to be called. it will call base class default constructor. 
+ 	
+ 	Super Keyword. in order to call base class parameterized constructor, java provide super keyword. super must be a first
+ 	 statement inside the subclass constructor, otherwise compiler will give compile time error.
+ 	
+ 	Inner Classes. || Class which are declared inside another class.
+ 		1.Top Level class can be public, default, final, abstract.
+ 		2. top level cannot be a static protected private.
+ 		3. inner class can use method and variables of outer class directly, whereas outer class cannot use methods and variables of inner class.
+ 	if outer class contain static variables and methods they can be also used in a same way as instance variable and method.
+ 	if the inner class 
+ 	
+ 	Abstract Classes are those classes which have the following feature. || abstract class A{}
+ 		1.These Classes can contain abstract method.
+ 		2.One cannot create object of a abstract class.
+ 		3.Abstract methods doesn't have any implementation.
+ 	
+ 	29th January 2018.
+ 	
+ 	INTERFACE ||||||||||||||||||
+ 	Interface provide multiple inheritance.
+ 	in interface can contain the following thing
+ 		1.Variables > All the variables in the interface are by default final, static & final.
+ 		2.Methods > All the methods which are used in the interface are by default public and abstract.
+ 		
+ 	Interface can extend from one or many interface.
+ 	A class can extend only one class but implement any number of interfaces.
+ 	
+ 	|>> When a class is inheriting a interface, the class must override all the methods used in the interface, otherwise compiler will give error.
+ 	use an abstract class when a template needs to defined for  group of subclasses
+ 	use an interface when a role needs to be defined for other classes, regardless of the inheritance tree of these classes.
+ 		
+ 	30th January 
+ 	||
+ 	PACKAGES ||
+ 	> How to Compile '' javac -d . / path
+ 	> How to run     '' java mypack.sample
+ 	
+ 	31st January -------------------------------------------------------------------------
+ 	
+ 	Access Modifiers
+ 	|| 1.Public
+ 	|| 2.Private
+ 	|| 3.Protected
+ 	
+ 	Private Access Modifiers is accessible only within the class.
+ 	A Class Cannot be a private or protected.
+ 	
+ 	Protected Access Modifier is accessible within a package and outside the package, 	
+ 	
+ 	Default Access Modifier is accessible within a package only.
+ 				  WITHIN CLASS  WITHIN PACKAGE   OUTSIDE PACKAGE USING INHERITANCE       OUTSIDE PACKAGE
+ 	  PRIVATE  			Y				N						N									N
+ 	  DEFAULT 			Y				Y						N									N
+ 	PROTECTED			Y				Y						Y									N
+ 	   PUBLIC 			Y				Y						Y									Y
+ 	
+ 	
+ 	|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ 	 ***   if we are overriding a method, then overridden method, must be less restrictive.
+ 	 
+ 	 1st February.
+ 	 In Java.length method, we have different classes to handle different types of exception.
+ 	 || Throwable Class. Handle By Error Class.
+ 	  	Error Class > Stack overflow error
+ 	  				> Out of Memory Error
+ 	  	Exception Class > IOEx
+ 	  					> NullPointerEx
+ 	  				    > NumberFormatEx
+ 	  				    > RuntimeEx
+ 	  				    > ClassNotFoundEx
+ 	  				    > NegativeArraySizeEx
+ 	 =========================================================================================
+ 	 There are two types of exception in java.
+ 	 Checked Exception : Those Exceptions which are checked at the compile time.
+ 	 					>> Classes that extend throwable class except runtime exception or error class is known as a Checked Exception.
+ 	 UnChecked Exception:They are checked at the runtime
+ 	 					>>Classes that extend runtime exception class.
+ 	 		|| In Case of Checked Exception, We Require the use of Try Catch Block, Without which program will not compile.
+ 	 		|| any class which inherits throwable class and any runtime class is known as user defined exception class.
+ 	 	+=+= to handle exception in java 
+ 	 		we use 5 keywords
+ 	 		try , catch, finally, throw, throws;
+ 	 		1.Try : it contains those statements which can cause errors.
+ 	 		2.Finally : it is a block which will get executed. irrespective of whether try block is successful or not.
+ 	 		3.Catch : without catch block, exception is uncatchable. it contains those instructions which are going to be executed when exception
+ 	 		occur in a program
+ 	 		after catch block program contain finally block then finally block will be executed. in application there can be a multiple catch block
+ 	 		catch block should be given before finally block otherwise program will give error.
+ 	 	PRINTSTACKTRACE() :: this method provide the complete information about the exception such as program name, it is automatically called by
+ 	 		JVM. after printStackTrace() Method the control is passed to the Operating System & program will be terminated. 
+  	 		
+ 	 Exception.getMessage()
+ 	  :: This method returns string data type, error message
+ 	  :: one can also use try within a try block. this is known as a nested try.
+ 	  :: if error occurs in the outer try, the inner try will not be executed at all.
+ 	  				
+ 	 6th February.
+ 	 if there are multiple catch blocks, then they must the ordered from most specific to general.
+ 	  
+ 	 THROW >> either user defined exception or in-built exception.
+ 	 		  we can throw either checked or unchecked exception in java.
+ 	 EXCEPTION 
+ 	 				CHECKED 							UNCHECKED
+ 	 			1.FileNotFoundException 		1.NullPointerException
+ 	 			2.ClassNotFoundException		2.OutOfBoundException
+ 	 			3.InterupttedException       	3.UnSupportedOperatorException
+ 	 			4.NoSuchMethodException			4.ClassCastException
+ 	 			5.NoSuchFieldException			5.EnumConstantException
+ 	 			6.IllegalAccessException    	6.IllegalArgumentException
+ 	 											7.IllegalThreadStateException
+ 	 											8.IndexOutOfBoundException
+ 	 											9.ArrayStoreException
+ 	 											
+ 	 	Checked Exception cannot be propagated using throw only.										
+ 		
+ 		Throws Keyword :: Generating exception at one point and handing at another point we use the keyword throws.
+ 		by using close keyword, checked exception can also be propagated.
+ 		if you are calling a method that declares an exception, then there are two cases
+ 		1.you caught the exception using try - catch.
+ 		2.you declare exception
+ 		
+ 		
+ 		Exception Handling with method overriding in java.
+ 		 		if superclass method (base class) doesn't declare an exception, then subclass overridden method cannot declare the checked exception.
+ 		 		subclass overridden method can declare the unchecked exception
+ 		 		if superclass method (base class) doesn't declare an exception, then subclass overridden method can declare same subclass 
+ 		 		exception, but cannot parent exception
+ 		 		
+ 		9th February 17
+ 		IOStream
+ 		
+ 		
+ 	 	9th March 2018 :: 
+ 	 	
+ 	 											
+ 	  		
